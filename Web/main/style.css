@@ -1,11 +1,12 @@
 body{
     font-family: sans-serif;
     text-align:center;
-    background:linear-gradient(120deg,#89f7fe,#66a6ff);
+    background:linear-gradient(120deg,#59bfc3,#4170b3);
 }
 
 h1{
     color:white;
+    font-size: 4.0rem;
 }
 
 #preview{
