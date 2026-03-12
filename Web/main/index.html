@@ -1,31 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<title>AI思い出生成アプリ</title>
-<link rel="stylesheet" href="style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI思い出生成アプリ</title>
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
+    <!-- 背景アニメーション用要素 -->
+    <div class="bg-shape shape1"></div>
+    <div class="bg-shape shape2"></div>
+    <div class="bg-shape shape3"></div>
 
-    <h1>AI 思い出生成アプリ</h1>
-    <p>写真をアップロードして、AIが空想の思い出を生成します。</p>
+    <div class="container glass-panel">
+        <h1>AI 思い出生成アプリ <span class="sparkle">✨</span></h1>
+        <p class="subtitle">写真をアップロードして、AIが空想の思い出を生成します。</p>
 
-    <div>
-        <label for="apiKey">Gemini API Key:</label>
-        <input type="password" id="apiKey" placeholder="AIのAPIキーを入力してください">
+        <div class="form-group">
+            <label for="apiKey">Gemini API Key</label>
+            <div class="input-wrapper">
+                <input type="password" id="apiKey" placeholder="AIのAPIキーを入力してください">
+            </div>
+        </div>
+
+        <div class="upload-area">
+            <label tabindex="0" for="imageUpload" class="upload-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                写真を選択
+            </label>
+            <input type="file" id="imageUpload">
+        </div>
+
+        <img id="preview" alt="アップロードされた写真のプレビュー">
+
+        <div id="memory"></div>
     </div>
-    <br>
 
-    <input type="file" id="imageUpload">
-
-    <br><br>
-
-    <img id="preview">
-
-    <div id="memory"></div>
-
-<script src="script/app.js"></script>
-
+    <script src="script/app.js"></script>
 </body>
+
 </html>
